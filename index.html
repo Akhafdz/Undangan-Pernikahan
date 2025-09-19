@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Undangan Pernikahan – Aisyah & Bima</title>
+
+  <!-- GANTI: Open Graph untuk preview saat dibagikan -->
+  <meta property="og:title" content="Undangan Pernikahan – Aisyah & Bima" />
+  <meta property="og:description" content="Dengan memohon rahmat Allah SWT, kami mengundang Bapak/Ibu/Saudara/i untuk hadir di hari bahagia kami." />
+  <meta property="og:image" content="https://picsum.photos/1200/630?grayscale" />
+  <meta property="og:type" content="website" />
+  <meta name="theme-color" content="#b08968" />
+
+  <!-- Font elegan -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      /* GANTI: Skema warna utama */
+      --bg: #fffaf6;
+      --fg: #2e2a27;
+      --muted: #6d5f57;
+      --primary: #b08968;
+      --primary-ink: #ffffff;
+      --card: #ffffff;
+      --ring: rgba(176, 137, 104, .35);
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #0f0e0d;
+        --fg: #eae6e2;
+        --muted: #b7ada5;
+        --primary: #d0a27f;
+        --primary-ink: #1a1410;
+        --card: #171412;
+        --ring: rgba(208,162,127,.35);
+      }
+    }
+    * { box-sizing: border-box; }
+    html, body { height: 100%; }
+    body {
+      margin: 0;
+      font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+      color: var(--fg);
+      background: var(--bg);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+    img { max-width: 100%; display:block; }
+    a { color: inherit; text-underline-offset: 3px; }
+    .container { width: min(1050px, 92vw); margin-inline: auto; }
+    .btn {
+      display:inline-flex; align-items:center; justify-content:center;
+      gap:.5rem; padding:.85rem 1.1rem; border-radius: .75rem;
+      font-weight:600; border:1px solid transparent; text-decoration:none;
+      background: var(--primary); color: var(--primary-ink);
+      box-shadow: 0 1px 0 rgba(0,0,0,.06), 0 6px 16px rgba(0,0,0,.08);
+      transition: transform .06s ease, box-shadow .2s ease, opacity .2s ease;
+    }
+    .btn:hover { transform: translateY(-1px); }
+    .btn.outline {
+      background: transparent; color: var(--fg);
+      border-color: var(--primary);
+    }
+    .chip { padding:.4rem .7rem; border-radius:999px; border:1px solid var(--ring); color: var(--muted); font-size:.9rem;}
+    .section { padding: 64px 0; }
+    .card {
+      background: var(--card);
+      border: 1px solid rgba(0,0,0,.06);
+      border-radius: 20px; padding: 24px;
+      box-shadow: 0 1px 0 rgba(0,0,0,.06), 0 12px 24px rgba(0,0,0,.06);
+    }
+    .h1 {
+      font-family: "Playfair Display", serif;
+      font-weight: 700; font-size: clamp(2.2rem, 5vw, 3.4rem);
+      line-height: 1.1; letter-spacing: .3px;
+    }
+    .h2 {
+      font-family: "Playfair Display", serif;
+      font-weight: 700; font-size: clamp(1.6rem, 3.5vw, 2.2rem);
+      line-height:1.2;
+    }
+    .center { text-align:center; }
+    .grid {
+      display: grid; gap: 24px;
+      grid-template-columns: repeat(12, 1fr);
+    }
+    .col-6 { grid-column: span 12; }
+    .col-4 { grid-column: span 12; }
+    @media (min-width: 850px){
+      .col-6 { grid-column: span 6; }
+      .col-4 { grid-column: span 4; }
+    }
+
+    /* Hero */
+    .hero {
+      position: relative; min-height: 88vh; display:grid; place-items:center;
+      background:
+        radial-gradient(1200px 600px at 50% -10%, rgba(176,137,104,.18), transparent 60%),
+        radial-gradient(800px 500px at 120% 10%, rgba(176,137,104,.18), transparent 60%),
+        var(--bg);
+      overflow:hidden;
+    }
+    .hero-inner { text-align:center; padding: 24px; }
+    .names { font-size: clamp(2.6rem, 7vw, 4.2rem); font-family:"Playfair Display", serif; margin:.4rem 0 0; }
+    .date { color: var(--muted); letter-spacing:.6px; }
+    .divider {
+      width: 80px; height: 1px; background: linear-gradient(90deg, transparent, var(--primary), transparent);
+      margin: 16px auto 0; opacity:.8;
+    }
+    .floating-audio {
+      position: fixed; right: 16px; bottom: 16px; z-index: 50;
+      backdrop-filter: blur(6px);
+      background: color-mix(in srgb, var(--card) 85%, transparent);
+      border:1px solid var(--ring); border-radius: 999px; padding: .6rem .9rem;
+      display:flex; align-items:center; gap:.5rem; cursor:pointer; user-select:none;
+      box-shadow: 0 6px 24px rgba(0,0,0,.12);
+    }
+
+    /* Countdown */
+    .countdown { display:flex; justify-content:center; gap: 14px; margin-top: 20px; flex-wrap:wrap;}
+    .cd-box { min-width: 84px; }
+    .cd-box .num { font-weight:700; font-size: 1.8rem; }
+    .cd-box .lbl { color: var(--muted); font-size:.9rem; }
+
+    /* Timeline */
+    .timeline { display:grid; gap: 16px; margin-top: 12px;}
+    .tl-item { display:flex; gap:14px; align-items:flex-start;}
+    .tl-dot { width: 12px; height:12px; border-radius:999px; background: var(--primary); margin-top: .4rem; flex: none; }
+    .tl-body { background: var(--card); border:1px solid rgba(0,0,0,.06); border-radius:14px; padding:12px 14px; }
+
+    /* Gallery */
+    .gallery { display:grid; gap:10px; grid-template-columns: repeat(2, 1fr); }
+    @media (min-width: 720px){ .gallery { grid-template-columns: repeat(4, 1fr);} }
+    .gallery img { border-radius: 12px; aspect-ratio:1/1; object-fit: cover; }
+
+    /* Footer */
+    footer { padding: 48px 0; color: var(--muted); text-align:center; }
+
+    /* Util */
+    .stack-sm > * { margin: 0; }
+    .stack-sm > * + * { margin-top: .5rem; }
+    .stack > * + * { margin-top: 1rem; }
+    .stack-lg > * + * { margin-top: 1.25rem; }
+
+    .field { display:grid; gap:.4rem; }
+    .input, textarea, select {
+      width: 100%; padding: .9rem 1rem; border-radius: 12px; outline: none;
+      border:1px solid rgba(0,0,0,.12); background: var(--card); color: var(--fg);
+      box-shadow: 0 1px 0 rgba(0,0,0,.03) inset;
+    }
+    .input:focus, textarea:focus, select:focus { border-color: var(--primary); box-shadow: 0 0 0 6px var(--ring); }
+    .copy {
+      font-size:.92rem; border:1px dashed var(--ring); border-radius:12px; padding:.7rem .9rem;
+      display:flex; justify-content:space-between; align-items:center; gap:10px;
+    }
+    .small { font-size:.92rem; color: var(--muted); }
+  </style>
+</head>
+<body>
+
+  <!-- Musik latar: GANTI src dengan file mp3 kamu -->
+  <audio id="bgm" preload="auto" loop src="https://cdn.pixabay.com/download/audio/2022/03/15/audio_964b4a1a2b.mp3?filename=warm-piano-ambient-110241.mp3"></audio>
+  <button class="floating-audio" id="audioBtn" aria-pressed="false" title="Putar/Jeda musik">
+    <span id="audioIcon">▶️</span>
+    <span>Musik</span>
+  </button>
+
+  <!-- HERO -->
+  <header class="hero">
+    <div class="hero-inner container">
+      <p class="chip">Undangan Pernikahan</p>
+      <!-- GANTI: Nama Mempelai -->
+      <h1 class="names">Aisyah & Bima</h1>
+      <div class="divider"></div>
+      <!-- GANTI: Tanggal & Lokasi singkat -->
+      <p class="date">Sabtu, 15 November 2025 · Bandung</p>
+
+      <div class="countdown" id="countdown">
+        <div class="cd-box center card">
+          <div class="num" id="d">0</div><div class="lbl">Hari</div>
+        </div>
+        <div class="cd-box center card">
+          <div class="num" id="h">0</div><div class="lbl">Jam</div>
+        </div>
+        <div class="cd-box center card">
+          <div class="num" id="m">0</div><div class="lbl">Menit</div>
+        </div>
+        <div class="cd-box center card">
+          <div class="num" id="s">0</div><div class="lbl">Detik</div>
+        </div>
+      </div>
+
+      <div style="margin-top:22px; display:flex; gap:10px; justify-content:center; flex-wrap:wrap;">
+        <!-- GANTI: Link RSVP ke Formspree/Google Form -->
+        <a class="btn" href="#rsvp">Konfirmasi Kehadiran</a>
+        <a class="btn outline" href="#lokasi">Lihat Lokasi</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- KALAM PEMBUKA -->
+  <section class="section">
+    <div class="container grid">
+      <div class="col-6">
+        <div class="card stack">
+          <h2 class="h2">Assalamu’alaikum warahmatullahi wabarakatuh</h2>
+          <p>Dengan memohon rahmat dan ridho Allah SWT, kami bermaksud mengundang Bapak/Ibu/Saudara/i untuk hadir dan memberikan doa restu pada pernikahan kami.</p>
+          <div class="stack-sm">
+            <p><strong>Aisyah Putri</strong><br><span class="small">Putri dari Bpk. Ahmad & Ibu Siti</span></p>
+            <p>&</p>
+            <p><strong>Bima Pratama</strong><br><span class="small">Putra dari Bpk. Rahmat & Ibu Dewi</span></p>
+          </div>
+        </div>
+      </div>
+      <div class="col-6">
+        <div class="card">
+          <!-- GANTI: Foto berdua -->
+          <img src="https://images.unsplash.com/photo-1519741497674-611481863552?q=80&w=1400&auto=format&fit=crop" alt="Foto pasangan" style="border-radius:14px;">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ACARA -->
+  <section class="section">
+    <div class="container">
+      <h2 class="h2 center">Rangkaian Acara</h2>
+      <p class="center small">Mohon hadir 15 menit sebelum acara dimulai.</p>
+
+      <div class="grid" style="margin-top:16px;">
+        <div class="col-6">
+          <div class="card">
+            <h3>Akad Nikah</h3>
+            <div class="timeline">
+              <div class="tl-item">
+                <div class="tl-dot"></div>
+                <div class="tl-body">
+                  <div><strong>Sabtu, 15 November 2025</strong></div>
+                  <div>08.00 – 09.00 WIB</div>
+                  <div>Masjid Al-Ikhlas, Jl. Contoh No. 123, Bandung</div>
+                </div>
+              </div>
+            </div>
+            <button class="btn" onclick="downloadICS('Akad Nikah','Masjid Al-Ikhlas, Bandung','2025-11-15T01:00:00Z','2025-11-15T02:00:00Z')">Simpan ke Kalender</button>
+          </div>
+        </div>
+
+        <div class="col-6">
+          <div class="card">
+            <h3>Resepsi</h3>
+            <div class="timeline">
+              <div class="tl-item">
+                <div class="tl-dot"></div>
+                <div class="tl-body">
+                  <div><strong>Sabtu, 15 November 2025</strong></div>
+                  <div>11.00 – 14.00 WIB</div>
+                  <div>Grand Hall, Jl. Bahagia No. 45, Bandung</div>
+                </div>
+              </div>
+            </div>
+            <button class="btn" onclick="downloadICS('Resepsi Pernikahan','Grand Hall, Bandung','2025-11-15T04:00:00Z','2025-11-15T07:00:00Z')">Simpan ke Kalender</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- LOKASI -->
+  <section class="section" id="lokasi">
+    <div class="container grid">
+      <div class="col-6">
+        <div class="card stack">
+          <h2 class="h2">Lokasi Acara</h2>
+          <p>Grand Hall, Jl. Bahagia No. 45, Bandung</p>
+          <div class="stack-sm">
+            <a class="btn" target="_blank" rel="noopener" href="https://maps.google.com/?q=Grand%20Hall%20Bandung">Buka di Google Maps</a>
+            <p class="small">Parkir tersedia. Ikuti penunjuk arah menuju “Grand Hall”.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-6">
+        <div class="card">
+          <!-- GANTI: sematkan peta tempat resepsi -->
+          <iframe title="Peta Lokasi" width="100%" height="320" style="border:0; border-radius:14px;"
+            loading="lazy" allowfullscreen
+            referrerpolicy="no-referrer-when-downgrade"
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d31634.398!2d107.604!3d-6.914!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e68e6e3c%3A0x0!2sBandung!5e0!3m2!1sid!2sid!4v000000">
+          </iframe>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- RSVP -->
+  <section class="section" id="rsvp">
+    <div class="container">
+      <div class="card">
+        <h2 class="h2 center">Konfirmasi Kehadiran</h2>
+        <p class="center small">Mohon isi formulir berikut paling lambat 5 November 2025.</p>
+        <!-- OPSI 1 (Formspree): GANTI action dengan endpoint Formspree kamu -->
+        <form class="grid" action="https://formspree.io/f/your-id" method="POST">
+          <div class="col-4 field">
+            <label>Nama</label>
+            <input class="input" type="text" name="nama" required />
+          </div>
+          <div class="col-4 field">
+            <label>Jumlah Tamu</label>
+            <select name="jumlah" class="input" required>
+              <option value="1">1 orang</option>
+              <option value="2">2 orang</option>
+              <option value="3">3 orang</option>
+              <option value="4">4 orang</option>
+            </select>
+          </div>
+          <div class="col-4 field">
+            <label>Kehadiran</label>
+            <select name="status" class="input" required>
+              <option value="Hadir">Hadir</option>
+              <option value="Mungkin">Mungkin</option>
+              <option value="Tidak hadir">Tidak hadir</option>
+            </select>
+          </div>
+          <div class="col-6 field">
+            <label>Ucapan/Doa</label>
+            <textarea class="input" name="pesan" rows="4" placeholder="Tulis doa/ucapan untuk mempelai..."></textarea>
+          </div>
+          <div class="col-6 field">
+            <label>Email (opsional, untuk pengingat)</label>
+            <input class="input" type="email" name="email" placeholder="nama@email.com" />
+          </div>
+          <div class="col-6">
+            <button class="btn" type="submit">Kirim RSVP</button>
+          </div>
+          <div class="col-6 center small">Atau isi via <a href="https://forms.gle/your-google-form" target="_blank" rel="noopener">Google Form</a>.</div>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- GALERI -->
+  <section class="section">
+    <div class="container">
+      <h2 class="h2 center">Galeri</h2>
+      <p class="center small">Beberapa momen kebersamaan kami.</p>
+      <div class="gallery" style="margin-top: 16px;">
+        <!-- GANTI: URL foto-foto -->
+        <img src="https://images.unsplash.com/photo-1511285560929-80b456fea0bc?q=80&w=1200&auto=format&fit=crop" alt="Foto 1">
+        <img src="https://images.unsplash.com/photo-1450101215322-bf5cd27642fc?q=80&w=1200&auto=format&fit=crop" alt="Foto 2">
+        <img src="https://images.unsplash.com/photo-1485875437342-9b39470b3d95?q=80&w=1200&auto=format&fit=crop" alt="Foto 3">
+        <img src="https://images.unsplash.com/photo-1511285560929-80b456fea0bc?q=80&w=1200&auto=format&fit=crop" alt="Foto 4">
+        <img src="https://images.unsplash.com/photo-1519741497674-611481863552?q=80&w=1200&auto=format&fit=crop" alt="Foto 5">
+        <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?q=80&w=1200&auto=format&fit=crop" alt="Foto 6">
+        <img src="https://images.unsplash.com/photo-1516726817505-f5ed825624d8?q=80&w=1200&auto=format&fit=crop" alt="Foto 7">
+        <img src="https://images.unsplash.com/photo-1487412912498-0447578fcca8?q=80&w=1200&auto=format&fit=crop" alt="Foto 8">
+      </div>
+    </div>
+  </section>
+
+  <!-- AMPLOP DIGITAL -->
+  <section class="section">
+    <div class="container grid">
+      <div class="col-6">
+        <div class="card stack">
+          <h2 class="h2">Amplop Digital</h2>
+          <p class="small">Doa restu Anda merupakan hadiah terindah. Jika berkenan mengirim hadiah, berikut rekening tujuan:</p>
+
+          <!-- GANTI: Info rekening -->
+          <div class="copy" data-copy="BCA 1234567890 a.n. Aisyah Putri">
+            <span><strong>BCA</strong> · 1234567890 · a.n. Aisyah Putri</span>
+            <button class="btn outline" type="button">Salin</button>
+          </div>
+          <div class="copy" data-copy="BRI 9876543210 a.n. Bima Pratama" style="margin-top:10px;">
+            <span><strong>BRI</strong> · 9876543210 · a.n. Bima Pratama</span>
+            <button class="btn outline" type="button">Salin</button>
+          </div>
+          <p class="small">Kirim bukti transfer via WhatsApp: <a href="https://wa.me/6281234567890" target="_blank" rel="noopener">0812-3456-7890</a></p>
+        </div>
+      </div>
+
+      <div class="col-6">
+        <div class="card stack">
+          <h2 class="h2">Protokol Kehadiran</h2>
+          <ul class="stack-sm" style="padding-left:1rem;">
+            <li>Gunakan dress code: <em>pastel formal</em>.</li>
+            <li>Mohon konfirmasi kehadiran sebelum 5 November 2025.</li>
+            <li>Parkir tersedia di Basement A & B.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- UCAPAN TAMU (localStorage, tanpa server) -->
+  <section class="section">
+    <div class="container">
+      <div class="card">
+        <h2 class="h2 center">Ucapan untuk Mempelai</h2>
+        <form id="guestbookForm" class="grid" onsubmit="handleGuestbook(event)">
+          <div class="col-4 field">
+            <label>Nama</label>
+            <input class="input" id="gbName" required>
+          </div>
+          <div class="col-8 field">
+            <label>Ucapan</label>
+            <input class="input" id="gbMsg" required placeholder="Semoga sakinah, mawaddah, warahmah…">
+          </div>
+          <div class="col-12">
+            <button class="btn" type="submit">Kirim Ucapan (lokal)</button>
+            <span class="small">*tersimpan di perangkat Anda</span>
+          </div>
+        </form>
+        <div id="guestbookList" class="stack" style="margin-top:16px;"></div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <p>Terima kasih atas doa dan kehadiran Anda.</p>
+      <p class="small">© 2025 Aisyah & Bima · Dibuat dengan ❤️</p>
+    </div>
+  </footer>
+
+  <script>
+    // === GANTI TANGGAL ACARA (format ISO lokal zona WIB = UTC+7) ===
+    // Untuk countdown kita pakai zona waktu pengguna agar akurat
+    const eventDateLocal = new Date("2025-11-15T08:00:00+07:00"); // jam mulai akad
+
+    // Countdown
+    function tick() {
+      const now = new Date();
+      const diff = eventDateLocal - now;
+      const d = Math.max(0, Math.floor(diff / (1000*60*60*24)));
+      const h = Math.max(0, Math.floor((diff / (1000*60*60)) % 24));
+      const m = Math.max(0, Math.floor((diff / (1000*60)) % 60));
+      const s = Math.max(0, Math.floor((diff / 1000) % 60));
+      document.getElementById('d').textContent = d;
+      document.getElementById('h').textContent = h.toString().padStart(2,'0');
+      document.getElementById('m').textContent = m.toString().padStart(2,'0');
+      document.getElementById('s').textContent = s.toString().padStart(2,'0');
+    }
+    tick(); setInterval(tick, 1000);
+
+    // Audio controls (user gesture required di sebagian besar browser)
+    const audio = document.getElementById('bgm');
+    const btn = document.getElementById('audioBtn');
+    const icon = document.getElementById('audioIcon');
+    let playing = false;
+    btn.addEventListener('click', async () => {
+      try {
+        if (!playing) { await audio.play(); playing = true; icon.textContent = '⏸️'; btn.setAttribute('aria-pressed','true'); }
+        else { audio.pause(); playing = false; icon.textContent = '▶️'; btn.setAttribute('aria-pressed','false'); }
+      } catch(e){ console.warn(e); }
+    });
+
+    // Copy rekening
+    document.querySelectorAll('.copy').forEach(el => {
+      el.querySelector('button').addEventListener('click', async () => {
+        const text = el.getAttribute('data-copy');
+        try {
+          await navigator.clipboard.writeText(text);
+          el.style.borderColor = 'var(--primary)';
+          el.style.transition = 'border-color .3s ease';
+          el.querySelector('button').textContent = 'Tersalin ✓';
+          setTimeout(() => { el.style.borderColor = 'var(--ring)'; el.querySelector('button').textContent = 'Salin'; }, 1500);
+        } catch(e){ alert('Gagal menyalin.'); }
+      });
+    });
+
+    // Guestbook lokal
+    const GB_KEY = 'guestbook';
+    function renderGB(){
+      const list = JSON.parse(localStorage.getItem(GB_KEY) || '[]');
+      const host = document.getElementById('guestbookList');
+      host.innerHTML = '';
+      list.slice().reverse().forEach(item => {
+        const card = document.createElement('div'); card.className = 'card';
+        card.innerHTML = '<strong>'+escapeHTML(item.name)+'</strong><p style="margin:.4rem 0 0;">'+escapeHTML(item.msg)+'</p><div class="small">'+new Date(item.ts).toLocaleString()+'</div>';
+        host.appendChild(card);
+      });
+    }
+    function handleGuestbook(e){
+      e.preventDefault();
+      const name = document.getElementById('gbName').value.trim();
+      const msg = document.getElementById('gbMsg').value.trim();
+      if(!name || !msg) return;
+      const list = JSON.parse(localStorage.getItem(GB_KEY) || '[]');
+      list.push({ name, msg, ts: Date.now() });
+      localStorage.setItem(GB_KEY, JSON.stringify(list));
+      e.target.reset(); renderGB();
+    }
+    function escapeHTML(s){ return s.replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#039;'}[c])); }
+    renderGB();
+
+    // Buat & unduh file .ics (Add to Calendar)
+    function downloadICS(title, location, startISO, endISO){
+      const dtStart = toICSDate(new Date(startISO));
+      const dtEnd = toICSDate(new Date(endISO));
+      const lines = [
+        'BEGIN:VCALENDAR',
+        'VERSION:2.0',
+        'CALSCALE:GREGORIAN',
+        'METHOD:PUBLISH',
+        'BEGIN:VEVENT',
+        'DTSTART:'+dtStart,
+        'DTEND:'+dtEnd,
+        'SUMMARY:'+escapeICS(title),
+        'LOCATION:'+escapeICS(location),
+        'DESCRIPTION:'+escapeICS('Aisyah & Bima Wedding'),
+        'END:VEVENT',
+        'END:VCALENDAR'
+      ].join('\r\n');
+      const blob = new Blob([lines], {type:'text/calendar'});
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url; a.download = (title||'event').replace(/\s+/g,'_')+'.ics';
+      document.body.appendChild(a); a.click(); URL.revokeObjectURL(url); a.remove();
+    }
+    function toICSDate(d){
+      // ICS pakai UTC (Zulu) format: YYYYMMDDTHHmmssZ
+      return d.getUTCFullYear().toString().padStart(4,'0')+
+             (d.getUTCMonth()+1).toString().padStart(2,'0')+
+             d.getUTCDate().toString().padStart(2,'0')+'T'+
+             d.getUTCHours().toString().padStart(2,'0')+
+             d.getUTCMinutes().toString().padStart(2,'0')+
+             d.getUTCSeconds().toString().padStart(2,'0')+'Z';
+    }
+    function escapeICS(s){ return String(s).replace(/([,;])/g, '\\$1'); }
+  </script>
+</body>
+</html>
